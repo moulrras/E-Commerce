@@ -1,0 +1,242 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #004d40;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    color: white;
+}
+.top-nav h1 a {
+    color: white;
+    text-decoration: none;
+}
+.search-bar form {
+    display: flex;
+}
+.search-bar input {
+    border: none;
+    padding: 8px;
+    border-radius: 5px 0 0 5px;
+}
+.search-bar button {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 0 5px 5px 0;
+    background-color: #00796b;
+    color: white;
+    cursor: pointer;
+}
+.user-actions a, .user-actions span {
+    color: white;
+    text-decoration: none;
+    margin-left: 1em;
+}
+.carrinho-link {
+    font-weight: bold;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #00796b;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+nav li a {
+    display: block;
+    padding: 1em;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+nav li a:hover {
+    background-color: #004d40;
+}
+
+main {
+    padding: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carrossel-container {
+    padding: 2em 0;
+}
+.carrossel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    white-space: nowrap;
+}
+.carrossel .produto {
+    flex: 0 0 auto;
+    width: 250px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5em;
+    text-align: center;
+}
+.produto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.produto {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5em;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.preco {
+    font-size: 1.2em;
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+.categoria {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 1em;
+}
+
+.add-carrinho-btn {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.add-carrinho-btn:hover {
+    background-color: #004d40;
+}
+
+/* Carrinho e Checkout */
+.carrinho-page, .checkout-page {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 2em;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.carrinho-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em 0;
+    border-bottom: 1px solid #eee;
+}
+.carrinho-total {
+    margin-top: 1em;
+    text-align: right;
+}
+#checkout-btn {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 1em;
+    transition: background-color 0.3s ease;
+}
+#checkout-btn:hover {
+    background-color: #b71c1c;
+}
+
+.checkout-page form {
+    margin-bottom: 2em;
+}
+.checkout-page input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.opcoes-pagamento {
+    margin-top: 2em;
+}
+.pagamento-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1em;
+    font-size: 1.1em;
+}
+.finalizar-btn {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+.login-container {
+    max-width: 400px;
+    margin: 5em auto;
+    padding: 2em;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.login-container label, .login-container input {
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+}
+.login-container input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

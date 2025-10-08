@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="carrinho-page">
+    <h2>Seu Carrinho</h2>
+    <div id="itens-carrinho">
+        <p>Seu carrinho está vazio.</p>
+    </div>
+    <div class="carrinho-total">
+        <h3>Total: R$ <span id="carrinho-total-valor">0.00</span></h3>
+        <button id="checkout-btn">Finalizar Compra</button>
+    </div>
+</div>
+{% endblock %}

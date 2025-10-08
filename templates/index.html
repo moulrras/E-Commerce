@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="carrossel-container">
+    <h2>Mais Vendidos</h2>
+    <div class="carrossel">
+        {% for produto in carrossel %}
+        <div class="produto">
+            <img src="{{ produto.imagem }}" alt="{{ produto.nome }}">
+            <h3>{{ produto.nome }}</h3>
+            <p class="preco">R$ {{ "%.2f"|format(produto.preco) }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container">
+    {% for produto in produtos %}
+    <div class="produto">
+        <img src="{{ produto.imagem }}" alt="{{ produto.nome }}">
+        <h2>{{ produto.nome }}</h2>
+        <p class="preco">R$ {{ "%.2f"|format(produto.preco) }}</p>
+        <p class="categoria">Categoria: {{ produto.categoria }}</p>
+        <button class="add-carrinho-btn" data-id="{{ produto.id }}" data-nome="{{ produto.nome }}" data-preco="{{ produto.preco }}" data-imagem="{{ produto.imagem }}">Adicionar ao Carrinho</button>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

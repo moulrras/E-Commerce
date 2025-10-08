@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="checkout-page">
+    <h2>Finalizar Compra</h2>
+    <div class="resumo-compra">
+        <h3>Resumo</h3>
+        <p>Total a pagar: R$ <span id="total-valor">{{ "%.2f"|format(total) }}</span></p>
+    </div>
+
+    <form id="form-checkout">
+        <div class="dados-pessoais">
+            <h3>Dados Pessoais e de Entrega</h3>
+            <input type="text" id="nome-completo" placeholder="Nome Completo" required>
+            <input type="text" id="cpf" placeholder="CPF" required>
+            <input type="text" id="endereco" placeholder="Endereço Completo" required>
+        </div>
+
+        <div class="opcoes-pagamento">
+            <h3>Selecione a forma de pagamento</h3>
+            <div class="forma-pagamento">
+                <button type="button" id="btn-pix" class="pagamento-btn">Pagar com Pix</button>
+            </div>
+            <div class="forma-pagamento">
+                <button type="button" id="btn-cartao" class="pagamento-btn">Pagar com Cartão</button>
+            </div>
+        </div>
+    </form>
+
+    <div id="area-pagamento" style="display: none;">
+        <div id="pix-area" style="display: none;">
+            <h4>QR Code para Pix</h4>
+            <img id="qr-code-img" src="" alt="QR Code Pix" style="max-width: 250px;">
+            <p>Leia o QR Code com o app do seu banco para pagar.</p>
+            <button id="btn-finalizar-pix" class="finalizar-btn">Simular Pagamento</button>
+        </div>
+        
+        <div id="cartao-area" style="display: none;">
+            <h4>Dados do Cartão</h4>
+            <form id="form-cartao">
+                <input type="text" placeholder="Número do Cartão" required>
+                <input type="text" placeholder="Nome no Cartão" required>
+                <input type="text" placeholder="Validade (MM/AA)" required>
+                <input type="text" placeholder="CVV" required>
+                <button type="submit" class="finalizar-btn">Simular Pagamento</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
