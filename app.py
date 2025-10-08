@@ -8,10 +8,7 @@ import base64
 from io import BytesIO
 
 app = Flask(__name__)
-# Chave secreta para gerenciar sessões (necessário para o login simulado)
 app.secret_key = 'uma_chave_muito_secreta'
-
-# Lista completa de produtos com imagens genéricas da internet
 produtos_all = [
     # Futebol
     {'id': '1', 'nome': 'Camisa de Futebol', 'preco': 150.00, 'categoria': 'Futebol', 'imagem': 'https://picsum.photos/seed/futebol1/200/200'},
@@ -92,7 +89,6 @@ def get_db_connection():
 def create_database():
     conn = get_db_connection()
     cursor = conn.cursor()
-    # Tabela de vendas atualizada com campos de entrega e pagamento
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS vendas (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
